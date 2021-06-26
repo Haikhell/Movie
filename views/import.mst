@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+{{> head }}
+
+<body>
+    <div class="wrapper">
+        {{> header }}
+        <section class="main-container">
+        <div class="enter"></div>
+        <main>
+        <div class="center">
+            <div class="new_movie">
+            <form enctype="multipart/form-data" action="/movies/file-import" method="POST">
+                <div class="free">
+
+                    <p>File</p>
+                    <input type="file" name="textFile" {{required}}>
+                    
+                    <div class="button-container">
+                    <input class='button -salmon' type="submit" value="SAVE!">
+                </div>
+            </form>
+            </div>
+        </div>
+        </main>
+        </section>
+        {{> footer }}
+    </div>
+</body>
+
+</html>
