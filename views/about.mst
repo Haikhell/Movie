@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+ {{> head }}
+
+ <body>
+  <div class="wrapper">
+   {{> header }}
+
+   <section class="main-container">
+    <div class="enter"></div>
+    <h2 style="margin: 8px">Wellcome!</h2>
+    <p>
+     Web application for storing information about movies!<br />
+     Created for a WebbyLab interview!
+    </p>
+    <h3 style="margin: 8px">
+     Creator
+     <a href="https://www.instagram.com/zak_roz/" target="_blank"
+      >Nazarii Kozinets</a
+     >
+    </h3>
+   </section>
+   {{> footer }}
+  </div>
+ </body>
+</html>

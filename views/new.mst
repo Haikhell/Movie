@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+{{> head }}
+
+<body>
+    <div class="wrapper">
+        {{> header }}
+        <section class="main-container">
+        <div class="enter"></div>
+        <main>
+        <div class="center">
+            <div class="new_movie">
+            <form enctype="multipart/form-data" action="/movies{{path}}" method="POST">
+                <div class="free">
+
+                    <p>Title</p>
+                    <input type="text" name="title" {{required}}>
+                    
+                    <p>Realease Year</p>
+                    <input type="number" name="RealeaseYear" min="1854" max="2022" {{required}}>
+
+                    <p>Format</p>
+                    <select name="format" {{required}}>
+                        <option value="VHS">VHS</option>
+                        <option value="DVD">DVD</option>
+                        <option value="Blu-Ray">Blu-Ray</option>
+                    </select>
+
+                    <p>Stars</p>
+                    <input type="text" name="stars" {{required}}>
+                    
+                    <div class="button-container">
+                    <input class='button -salmon' type="submit" value="SAVE!">
+                </div>
+            </form>
+            </div>
+            <form action="/movies/import" method="GET" class="middle_form">
+                <div class="button-ser">
+                 <input
+                  class="button -salmonser center"
+                  type="submit"
+                  value="Import file"
+                 />
+                </div>
+               </form>
+        </div>
+        </main>
+        </section>
+        {{> footer }}
+    </div>
+</body>
+
+</html>

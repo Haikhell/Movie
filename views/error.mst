@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+ {{> head }}
+
+ <body>
+  <div class="wrapper">
+   {{> header }}
+   <section class="main-container">
+    <section class="page_404">
+     <div class="four_zero_four_bg">
+      <h1 class="h2">{{ status_code }}</h1>
+     </div>
+     <div class="contant_box_404">
+      <h3 class="h2">
+       {{ message }}
+      </h3>
+      <!--<div class="link_404">
+              <a href="/" >Go to Home</a>
+            </div>-->
+      <form action="/" method="GET" class="middle_form">
+       <div class="button-container">
+        <input class="button -salmon center" type="submit" value="Go to Home" />
+        <!-- <div class='button -salmon center'>Create new moviev</div>-->
+       </div>
+       <!-- <input type="submit" value="Create new movie"> -->
+      </form>
+     </div>
+    </section>
+   </section>
+   {{> footer }}
+  </div>
+ </body>
+</html>
