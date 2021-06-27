@@ -27,10 +27,10 @@ module.exports = {
           })
         .end(buffer);
     });
-  },
-
-  async deleteMedia(public_id) {
-    return await cloudinary.v2.uploader.destroy(public_id, { resource_type: 'raw' }, function (error, result) { console.log(result, error); })
   }
+
+  // async deleteMedia(public_id) {
+  //   return await cloudinary.v2.uploader.destroy(public_id, { resource_type: 'raw' }, function (error, result) { console.log(result, error); })
+  // }
 
 }
