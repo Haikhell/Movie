@@ -8,7 +8,8 @@ const movieRepository = new MoviesRepository();
 const starRepository = new StarsRepository();
 
 const page_size = 6;
-
+// TODO split into smaller files
+// TODO split into more functions
 module.exports = {
     async getMovies(req, res, next) {
         try {
@@ -20,6 +21,7 @@ module.exports = {
             if (page_str === undefined) page = 1;
             else {
                 page = Number(page_str);
+              
                 if (isNaN(page)) return next(new myError(400, 'page is not a number'));
                 if (!Number.isInteger(page)) return next(new myError(400, 'page is not an integer'));
                 if (page < 1) return next(new myError(400, 'invalid page value (page < 1)'));
@@ -73,14 +75,14 @@ module.exports = {
             const movies_page = movies.slice(offset, offset + page_size);
 
             const arr = [];
-
+          
             for (const movie of movies_page) {
                 arr.push({
                     id: movie.id,
                     title: movie.title
                 });
             }
-
+            
             const paginator_pages = []
 
             let title_query = '';
@@ -205,8 +207,10 @@ module.exports = {
             const body = req.body
             body.fileUrl = await MediaController.addMediaFile(body.fileUrl, req)
             const response = await fetch(body.fileUrl);
+            
             let movies = await response.text();
             movies = movies.split("\r\n")
+            
             let obj_2_create = {
                 title: undefined,
                 ReleaseYear: undefined,
