@@ -1,7 +1,7 @@
 require('dotenv').config();
  
 const env = process.env.NODE_ENV; // 'dev' or 'test'
- 
+// TODO use  new Object.freeze({})
 const dev = {
  app: {
    port: process.env.PORT
@@ -17,6 +17,7 @@ const dev = {
    name: process.env.DEV_DB_NAME || 'db'
  }
 };
+// TODO use  new Object.freeze({})
 const test = {
  app: {
    port: parseInt(process.env.TEST_APP_PORT) || 3000
