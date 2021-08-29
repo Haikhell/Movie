@@ -1,3 +1,4 @@
+// TODO don`t use var 
 var cloudinary = require('cloudinary');
 
 const config = require('../config');
